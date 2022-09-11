@@ -153,10 +153,10 @@ const downvote = (id) => {
 const createDropDownMenu = () => {
   const updateStar = (id) => {
     let el = document.getElementById(id).children[0];
-    if (el.getAttribute("src") === "/images/icon-star.svg") {
-      el.src = "/images/icon-star-filled.svg";
+    if (el.getAttribute("src") === "images/icon-star.svg") {
+      el.src = "images/icon-star-filled.svg";
     } else {
-      el.src = "/images/icon-star.svg";
+      el.src = "images/icon-star.svg";
     }
   };
 
@@ -200,7 +200,7 @@ const createDropDownMenu = () => {
   communityDiv.innerHTML = `
         <div className="community-label">
             <img
-                src='/images/icon-plus.svg'
+                src='images/icon-plus.svg'
                 height="16px"
                 width="16px"
                 class="dropdown-image"
@@ -225,7 +225,7 @@ const createDropDownMenu = () => {
         </div>
         <div id=${community.name}-star>
             <img
-                src="/images/icon-star.svg"
+                src="images/icon-star.svg"
                 height="16px"
                 width="16px"
                 class="dropdown-star"
@@ -245,19 +245,19 @@ const createDropDownMenu = () => {
   let feeds = [
     {
       name: "Home",
-      image: "/images/icon-home.png",
+      image: "images/icon-home.png",
     },
     {
       name: "Popular",
-      image: "/images/icon-trending.png",
+      image: "images/icon-trending.png",
     },
     {
       name: "All",
-      image: "/images/icon-all.png",
+      image: "images/icon-all.png",
     },
     {
       name: "Reddit Live",
-      image: "/images/icon-reddit-live.png",
+      image: "images/icon-reddit-live.png",
     },
   ];
 
@@ -282,43 +282,43 @@ const createDropDownMenu = () => {
   let otherItems = [
     {
       name: "User Settings",
-      image: "/images/avatar.png",
+      image: "images/avatar.png",
     },
     {
       name: "Messages",
-      image: "/images/avatar.png",
+      image: "images/avatar.png",
     },
     {
       name: "Create Post",
-      image: "/images/icon-plus.svg",
+      image: "images/icon-plus.svg",
     },
     {
       name: "Top Communities",
-      image: "/images/icon-top-comms.png",
+      image: "images/icon-top-comms.png",
     },
     {
       name: "Notifications",
-      image: "/images/icon-notifications.png",
+      image: "images/icon-notifications.png",
     },
     {
       name: "Coins",
-      image: "/images/icon-coins.png",
+      image: "images/icon-coins.png",
     },
     {
       name: "Premium",
-      image: "/images/icon-premium.png",
+      image: "images/icon-premium.png",
     },
     {
       name: "Avatar",
-      image: "/images/icon-avatar.png",
+      image: "images/icon-avatar.png",
     },
     {
       name: "Talk",
-      image: "/images/icon-talk.png",
+      image: "images/icon-talk.png",
     },
     {
       name: "Predictions",
-      image: "/images/icon-predictions.png",
+      image: "images/icon-predictions.png",
     },
   ];
 
@@ -430,7 +430,7 @@ const createFeedSelectionButtons = () => {
     //add html to the button
     feedButton.innerHTML = `
         <img
-            src="/images/${feed.image}"
+            src="images/${feed.image}"
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
@@ -438,7 +438,7 @@ const createFeedSelectionButtons = () => {
         <span class="feed-selection-text">${feed.name}</span>
 
         <img
-            src="/images/icon-caret-down.svg"
+            src="images/icon-caret-down.svg"
             width="14px"
             height="14px"
             class="active-feed-img feed-selection-caret"
@@ -520,7 +520,7 @@ const createFeedSelectionMobileMenu = () => {
     //add html to the button
     feedButton.innerHTML = `
         <img
-            src="/images/${feed.image}"
+            src="images/${feed.image}"
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
@@ -617,7 +617,7 @@ const createFeedLayoutMenu = () => {
     //add html to the button
     layoutButton.innerHTML = `
         <img
-            src="/images/${layout.image}"
+            src="images/${layout.image}"
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
@@ -651,7 +651,7 @@ const createFeedLayoutMenu = () => {
 
             //selected the clicked elements text
             let buttonText = element.children[1].innerHTML.toLowerCase();
-            let newImage = `/images/icon-${buttonText}.png`;
+            let newImage = `images/icon-${buttonText}.png`;
 
             //update the main button image
             mainButton.children[0].src = newImage;
@@ -888,7 +888,7 @@ const createCardsAndAddToDOM = (feed) => {
           <!-- Comment -->
           <div class="post-stat-item">
             <img
-              src="/images/icon-comment.png"
+              src="images/icon-comment.png"
               width="24px"
               height="24px"
               class="post-state-icon"
@@ -899,7 +899,7 @@ const createCardsAndAddToDOM = (feed) => {
           <!-- Award -->
           <div class="post-stat-item">
             <img
-              src="/images/icon-award.png"
+              src="images/icon-award.png"
               width="24px"
               height="24px"
               class="post-state-icon"
@@ -910,7 +910,7 @@ const createCardsAndAddToDOM = (feed) => {
           <!-- Share -->
           <div class="post-stat-item">
             <img
-              src="/images/icon-share.png"
+              src="images/icon-share.png"
               width="24px"
               height="24px"
               class="post-state-icon"
@@ -921,7 +921,7 @@ const createCardsAndAddToDOM = (feed) => {
           <!-- Ellipse -->
           <div class="post-stat-item">
             <img
-              src="/images/icon-post-ellipse.png"
+              src="images/icon-post-ellipse.png"
               width="24px"
               height="24px"
               class="post-state-icon"
