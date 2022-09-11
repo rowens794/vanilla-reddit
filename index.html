@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Reddit - Dive into anything</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body class="">
+    <!-- Nav bar start -->
+    <nav class="navbar">
+      <!-- Container for Logo / Select / Search -->
+      <div class="navbar-items">
+        <!-- Logo -->
+        <div class="icon-container">
+          <img src="/images/reddit-icon.svg" width="32px" height="32px" />
+          <img
+            src="/images/reddit-text.svg"
+            width="57px"
+            height="32px"
+            id="reddit-text"
+          />
+        </div>
+
+        <!-- Dropdown Select -->
+        <div class="menu-parent">
+          <button name="menu-dropdown" id="menu-dropdown">
+            <div id="icon-title">
+              <div class="vert-center">
+                <img
+                  src="images/icon-home.svg"
+                  class="icon-offset"
+                  height="24px"
+                  width="24px"
+                />
+              </div>
+              <div class="vert-center" id="home-text">
+                <h1 id="page-title">Home</h1>
+              </div>
+            </div>
+            <div class="vert-center">
+              <img
+                src="images/icon-caret-down.svg"
+                height="14px"
+                width="14px"
+              />
+            </div>
+          </button>
+
+          <!---- Dropdown Menu ---->
+          <div id="dropdown-menu-dropdown" style="display: none">
+            <form
+              action="/search/"
+              autocomplete="off"
+              id="drop-down-filter"
+              method="get"
+              role="search"
+            >
+              <input
+                type="search"
+                id="filter-search-bar"
+                name="q"
+                placeholder="Filter"
+                value=""
+              />
+            </form>
+
+            <span class="drop-down-heading">Your Communities</span>
+            <div id="communities"></div>
+
+            <span class="drop-down-heading">Feeds</span>
+            <div id="feeds"></div>
+
+            <span class="drop-down-heading">Other</span>
+            <div id="other"></div>
+          </div>
+        </div>
+
+        <!-- Spacing Div for Small Screens -->
+        <div id="smallScreenSpacer"></div>
+
+        <!-- Search Reddit -->
+        <form
+          action="/search/"
+          autocomplete="off"
+          id="header-search-container"
+          method="get"
+          role="search"
+        >
+          <label id="header-search-icon" for="header-search-bar">
+            <img src="/images/icon-search.svg" height="20px" width="20px" />
+            <span aria-live="assertive" aria-hidden="true" class=""
+              >Search all of Reddit</span
+            ></label
+          ><input
+            type="search"
+            id="header-search-bar"
+            name="q"
+            placeholder="Search Reddit"
+            value=""
+          />
+        </form>
+
+        <!-- Popular Reddit Icons -->
+        <div class="icon-list" id="popular-icons">
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-trending.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-all.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-reddit-live.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+        </div>
+
+        <!-- Spacer -->
+        <div class="spacer" id="spacer"></div>
+
+        <!-- Core Reddit Actions -->
+        <div class="icon-list" id="core-icons">
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-chat.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-notifications.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+
+          <a href="#" class="icon">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background"></div>
+            <img
+              src="/images/icon-create-post.png"
+              width="20px"
+              height="20px"
+              class="icon-img"
+            />
+          </a>
+        </div>
+
+        <!-- Shop Avatars Button -->
+        <div class="shop-avatars-container">
+          <a href="#">
+            <button class="shop-avatars-button">Shop Avatars</button>
+          </a>
+          <img
+            src="/images/sparkle.svg"
+            height="16px"
+            width="16px"
+            id="sparkle1"
+          />
+          <img
+            src="/images/sparkle.svg"
+            height="16px"
+            width="16px"
+            id="sparkle2"
+          />
+          <img
+            src="/images/sparkle.svg"
+            height="16px"
+            width="16px"
+            id="sparkle3"
+          />
+        </div>
+
+        <!-- User Action Button -->
+        <button name="user-dropdown" id="user-dropdown">
+          <div id="icon-user">
+            <div class="vert-center relative">
+              <img
+                src="images/avatar.png"
+                class="icon-offset"
+                height="36px"
+                width="36px"
+              />
+              <div id="status-dot"></div>
+            </div>
+
+            <div class="vert-center" id="user-info">
+              <span id="username">NotAUser</span>
+              <span id="karma">
+                <img
+                  src="images/karma-flower.png"
+                  height="16px"
+                  width="16px"
+                  id="karma-flower"
+                />
+                2,034 karma
+              </span>
+            </div>
+          </div>
+          <div class="vert-center">
+            <img src="images/icon-caret-down.svg" height="14px" width="14px" />
+          </div>
+        </button>
+
+        <!-- Gap provides room for secondary buttons -->
+        <div id="end-gap"></div>
+      </div>
+
+      <!-- Secondary Reddit Actions (absolutely positioned) -->
+      <div class="secondary-icon-list">
+        <a href="#" class="secondary-icon">
+          <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+          <img
+            src="/images/icon.envelope.png"
+            width="12px"
+            height="12px"
+            class="secondary-icon-img"
+          />
+        </a>
+
+        <a href="#" class="secondary-icon">
+          <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+          <img
+            src="/images/icon.reddit-mascot.png"
+            width="20px"
+            height="20px"
+            class="secondary-icon-img"
+          />
+        </a>
+
+        <a href="#" class="secondary-icon">
+          <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+          <img
+            src="/images/icon.cog.png"
+            width="20px"
+            height="20px"
+            class="secondary-icon-img"
+          />
+        </a>
+
+        <a href="#" class="secondary-icon">
+          <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+          <img
+            src="/images/icon.uparrow.png"
+            width="20px"
+            height="20px"
+            class="secondary-icon-img"
+          />
+        </a>
+      </div>
+    </nav>
+
+    <main id="main-content">
+      <div id="content-col">
+        <!-- Create Post -->
+        <div class="card-body" id="create-post-card">
+          <!-- Avatar Icon -->
+          <div id="avatar-container">
+            <img
+              src="/images/avatar.png"
+              height="38px"
+              width="38px"
+              id="avatar-img"
+            />
+            <div id="status-dot-2"></div>
+          </div>
+
+          <!-- Create Post Form -->
+          <form
+            action="/search/"
+            autocomplete="off"
+            id="create-post-container"
+            method="get"
+            role="search"
+          >
+            <label id="header-search-icon" for="header-search-bar">
+              <span aria-live="assertive" aria-hidden="true" class=""
+                >Create Post</span
+              ></label
+            ><input
+              type="search"
+              id="create-post-input"
+              name="q"
+              placeholder="Create Post"
+              value=""
+            />
+          </form>
+
+          <!-- Add Image Button -->
+          <a href="#" class="icon-lg">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background-lg"></div>
+            <img
+              src="/images/icon-image.png"
+              width="28px"
+              height="28px"
+              class="icon-img-lg"
+            />
+          </a>
+
+          <!-- Add Link Button -->
+          <a href="#" class="icon-lg">
+            <!-- i don't have icon svg's this div allows me to 
+            replicate the hover background change -->
+            <div class="icon-background-lg"></div>
+            <img
+              src="/images/icon-link.png"
+              width="28px"
+              height="28px"
+              class="icon-img-lg"
+            />
+          </a>
+        </div>
+
+        <!-- Feed Selection Card -->
+        <div class="card-body" id="feed-selection">
+          <!-- These buttons are added via JS -->
+          <div id="card-selection-icons"></div>
+
+          <button
+            href="#"
+            class="feedSelectionButton feedButtonInActive"
+            id="layout-selection-button"
+          >
+            <img
+              src="/images/icon-card.png"
+              width="28px"
+              height="28px"
+              class="icon-img-lg"
+            />
+            <img
+              src="/images/caret-down.svg"
+              width="28px"
+              height="28px"
+              class="icon-img-sm lighten"
+            />
+          </button>
+        </div>
+
+        <!-- Feed Selection Mobile Dropdown -->
+        <div id="card-selection-icons-mobile" style="display: none"></div>
+
+        <!-- Feed Selection Layout Dropdown -->
+        <div id="feed-selection-layout" style="display: none"></div>
+
+        <!-- Posts -->
+        <div id="feed-content"></div>
+      </div>
+
+      <!-- Reddit Side Bar -->
+      <div id="sidebar-col">
+        <!-- Top News -->
+        <div class="card-body-no-margin" id="top-news-card">
+          <div
+            id="top-news-heading"
+            style="background-image: url('images/top-news.png')"
+          >
+            <p id="top-news-heading-text">Top News Communities</p>
+          </div>
+
+          <!-- World News -->
+          <div class="top-news-item border-bottom">
+            <a href="#" class="top-news-flex">
+              <span class="content-center serif text-black">1</span>
+              <img
+                class="arrow-up content-center"
+                src="/images/icon-arrow-up.png"
+                width="14px"
+                height="14px"
+              />
+              <img
+                class="arrow-up content-center"
+                src="/images/world-news.png"
+                width="40px"
+                height="40px"
+              />
+              <span class="content-center top-news-label text-black"
+                >r/worldnews</span
+              >
+            </a>
+
+            <button
+              class="join-community-button light-on-hover"
+              id="top-news-1"
+            >
+              <p class="join">Join</p>
+            </button>
+          </div>
+
+          <!-- Not the Onion -->
+          <div class="top-news-item border-bottom">
+            <a href="#" class="top-news-flex">
+              <span class="content-center serif text-black">2</span>
+              <img
+                class="arrow-up content-center"
+                src="/images/icon-arrow-up.png"
+                width="14px"
+                height="14px"
+              />
+              <img
+                class="arrow-up content-center"
+                src="/images/nottheonion.png"
+                width="40px"
+                height="40px"
+              />
+              <span class="content-center top-news-label text-black"
+                >r/nottheonion</span
+              >
+            </a>
+
+            <button
+              class="join-community-button light-on-hover"
+              id="top-news-2"
+            >
+              <p class="join">Join</p>
+            </button>
+          </div>
+
+          <!-- Tech News -->
+          <div class="top-news-item border-bottom">
+            <a href="#" class="top-news-flex">
+              <span class="content-center serif text-black">3</span>
+              <img
+                class="arrow-up content-center"
+                src="/images/icon-arrow-up.png"
+                width="14px"
+                height="14px"
+              />
+              <img
+                class="arrow-up content-center"
+                src="/images/technews.png"
+                width="40px"
+                height="40px"
+              />
+              <span class="content-center top-news-label text-black"
+                >r/technews</span
+              >
+            </a>
+
+            <button
+              class="join-community-button light-on-hover"
+              id="top-news-3"
+            >
+              <p class="join">Join</p>
+            </button>
+          </div>
+
+          <!-- Saved You a Click -->
+          <div class="top-news-item">
+            <a href="#" class="top-news-flex">
+              <span class="content-center serif text-black">4</span>
+              <img
+                class="arrow-up content-center"
+                src="/images/icon-arrow-up.png"
+                width="14px"
+                height="14px"
+              />
+              <img
+                class="arrow-up content-center"
+                src="/images/savedyouaclick.png"
+                width="40px"
+                height="40px"
+              />
+              <span class="content-center top-news-label text-black"
+                >r/savedyouaclick</span
+              >
+            </a>
+
+            <button
+              class="join-community-button light-on-hover"
+              id="top-news-4"
+            >
+              <p class="join">Join</p>
+            </button>
+          </div>
+
+          <!-- View All Button -->
+          <a href="#">
+            <button id="" class="blue-button light-on-hover margin-1">
+              View All
+            </button>
+          </a>
+
+          <!-- Tags -->
+          <div class="flex" id="tag-container">
+            <a href="#" class="remove-decoration">
+              <button class="tag-button">Top</button>
+            </a>
+            <a href="#" class="remove-decoration">
+              <button class="tag-button">Near You</button>
+            </a>
+            <a href="#" class="remove-decoration">
+              <button class="tag-button">Aww</button>
+            </a>
+            <a href="#" class="remove-decoration">
+              <button class="tag-button">Sports</button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Reddit Premium -->
+        <div class="card-body" id="reddit-premium">
+          <div class="red-prem-container">
+            <img
+              src="/images/reddit-shield.png"
+              width="28px"
+              height="28px"
+              class="red-prem-img"
+            />
+            <div>
+              <p class="red-prem-title">Reddit Premium</p>
+              <p class="red-prem-content">
+                The best Reddit experience, with monthly Coins
+              </p>
+            </div>
+          </div>
+          <a href="#">
+            <button id="red-premium-button" class="light-on-hover">
+              Try Now
+            </button>
+          </a>
+        </div>
+
+        <!-- Home -->
+        <div class="card-body-no-margin" id="reddit-premium">
+          <img src="/images/home-banner.png" width="310px" height="34px" />
+          <div id="home-heading">
+            <img src="/images/snoo-home.png" width="48px" height="68px" />
+            <div class="home-text-container"><p class="">Home</p></div>
+          </div>
+          <p class="home-msg">
+            Your personal Reddit frontpage. Come here to check in with your
+            favorite communities.
+          </p>
+
+          <!-- Create Post Button -->
+          <a href="#">
+            <button id="" class="blue-button light-on-hover margin-1-bottom-0">
+              Create Post
+            </button>
+          </a>
+
+          <!-- Create Community Button -->
+          <a href="#">
+            <button id="" class="white-button light-on-hover margin-1">
+              Create Community
+            </button>
+          </a>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="card-body" id="recent-posts">
+          <h3 class="card-title">Recent Posts</h3>
+
+          <!-- Post 1 -->
+          <div class="recent-post-container border-bottom">
+            <div class="recent-post-icon-container">
+              <img
+                src="/images/icon-post.png"
+                width="24px"
+                height="24px"
+                class="recent-post-icon"
+              />
+            </div>
+            <div>
+              <a class="recent-post-title">
+                What are some of your favorite fonts?
+              </a>
+              <span class="recent-post-meta"
+                >145 points <span class="bullet-spacer">&bull;</span> 18
+                comments <span class="bullet-spacer">&bull;</span> 1 day</span
+              >
+            </div>
+          </div>
+
+          <!-- Post 2 -->
+          <div class="recent-post-container">
+            <div class="recent-post-icon-container">
+              <img
+                src="/images/icon-post.png"
+                width="24px"
+                height="24px"
+                class="recent-post-icon"
+              />
+            </div>
+            <div>
+              <a class="recent-post-title">
+                Coming back to frontend after 10 days off
+              </a>
+              <span class="recent-post-meta"
+                >19 points <span class="bullet-spacer">&bull;</span> 8 comments
+                <span class="bullet-spacer">&bull;</span> 14 hours</span
+              >
+            </div>
+          </div>
+
+          <div></div>
+          <button id="clear-recent-posts">Clear</button>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="card-body" id="footer">
+          <div class="footer-grid border-bottom">
+            <a href="#" class="footer-link">User Agreement</a>
+            <a href="#" class="footer-link">Privacy Policy</a>
+            <a href="#" class="footer-link">Content Policy</a>
+            <a href="#" class="footer-link">Moderator Code Of Conduct</a>
+          </div>
+
+          <div class="footer-grid border-bottom">
+            <a href="#" class="footer-link">English</a>
+            <a href="#" class="footer-link">Français</a>
+            <a href="#" class="footer-link">Italiano</a>
+            <a href="#" class="footer-link">Deutsch</a>
+            <a href="#" class="footer-link">Español</a>
+            <a href="#" class="footer-link">Português</a>
+          </div>
+
+          <div class="">
+            <span class="footer-link">Not Reddit © 2022. No legalese. </span>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+
+  <script src="http://js.pusher.com/2.2/pusher.min.js"></script>
+  <script type="text/javascript" src="index.js"></script>
+</html>
