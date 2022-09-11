@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta
+      name="description"
+      content="An implementation of reddit's homepage using vanilla html/css/js"
+    />
 
     <title>Reddit - Dive into anything</title>
     <link rel="stylesheet" href="style.css" />
@@ -15,18 +19,28 @@
       <div class="navbar-items">
         <!-- Logo -->
         <div class="icon-container">
-          <img src="images/reddit-icon.svg" width="32px" height="32px" />
+          <img
+            src="images/reddit-icon.svg"
+            width="32px"
+            height="32px"
+            alt="reddit icon"
+          />
           <img
             src="images/reddit-text.svg"
             width="57px"
             height="32px"
             id="reddit-text"
+            alt="reddit icon text"
           />
         </div>
 
         <!-- Dropdown Select -->
         <div class="menu-parent">
-          <button name="menu-dropdown" id="menu-dropdown">
+          <button
+            name="menu-dropdown"
+            id="menu-dropdown"
+            aria-label="Menu Dropdown"
+          >
             <div id="icon-title">
               <div class="vert-center">
                 <img
@@ -34,6 +48,7 @@
                   class="icon-offset"
                   height="24px"
                   width="24px"
+                  alt="home icon"
                 />
               </div>
               <div class="vert-center" id="home-text">
@@ -45,6 +60,7 @@
                 src="images/icon-caret-down.svg"
                 height="14px"
                 width="14px"
+                alt="caret icon"
               />
             </div>
           </button>
@@ -90,7 +106,12 @@
           role="search"
         >
           <label id="header-search-icon" for="header-search-bar">
-            <img src="images/icon-search.svg" height="20px" width="20px" />
+            <img
+              src="images/icon-search.svg"
+              height="20px"
+              width="20px"
+              alt="search icon"
+            />
             <span aria-live="assertive" aria-hidden="true" class=""
               >Search all of Reddit</span
             ></label
@@ -105,7 +126,7 @@
 
         <!-- Popular Reddit Icons -->
         <div class="icon-list" id="popular-icons">
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="Trending Posts">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -114,10 +135,11 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="trending icon"
             />
           </a>
 
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="All Posts">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -126,10 +148,11 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="all icon"
             />
           </a>
 
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="Reddit Live">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -138,6 +161,7 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="live icon"
             />
           </a>
         </div>
@@ -147,7 +171,7 @@
 
         <!-- Core Reddit Actions -->
         <div class="icon-list" id="core-icons">
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="Chat">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -156,10 +180,11 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="chat icon"
             />
           </a>
 
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="Notifications">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -168,10 +193,11 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="notifications icon"
             />
           </a>
 
-          <a href="#" class="icon">
+          <a href="#" class="icon" aria-label="Create Post">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background"></div>
@@ -180,37 +206,47 @@
               width="20px"
               height="20px"
               class="icon-img"
+              alt="create post icon"
             />
           </a>
         </div>
 
         <!-- Shop Avatars Button -->
         <div class="shop-avatars-container">
-          <a href="#">
-            <button class="shop-avatars-button">Shop Avatars</button>
+          <a href="#" aria-label="Shop Avatars">
+            <button class="shop-avatars-button" aria-label="Shop Avatars">
+              Shop Avatars
+            </button>
           </a>
           <img
             src="images/sparkle.svg"
             height="16px"
             width="16px"
             id="sparkle1"
+            alt="sparkle"
           />
           <img
             src="images/sparkle.svg"
             height="16px"
             width="16px"
             id="sparkle2"
+            alt="sparkle"
           />
           <img
             src="images/sparkle.svg"
             height="16px"
             width="16px"
             id="sparkle3"
+            alt="sparkle"
           />
         </div>
 
         <!-- User Action Button -->
-        <button name="user-dropdown" id="user-dropdown">
+        <button
+          name="user-dropdown"
+          id="user-dropdown"
+          aria-label="User Dropdown"
+        >
           <div id="icon-user">
             <div class="vert-center relative">
               <img
@@ -218,6 +254,7 @@
                 class="icon-offset"
                 height="36px"
                 width="36px"
+                alt="avatar icon"
               />
               <div id="status-dot"></div>
             </div>
@@ -230,13 +267,19 @@
                   height="16px"
                   width="16px"
                   id="karma-flower"
+                  alt="karma icon"
                 />
                 2,034 karma
               </span>
             </div>
           </div>
           <div class="vert-center">
-            <img src="images/icon-caret-down.svg" height="14px" width="14px" />
+            <img
+              src="images/icon-caret-down.svg"
+              height="14px"
+              width="14px"
+              alt="caret down"
+            />
           </div>
         </button>
 
@@ -246,7 +289,7 @@
 
       <!-- Secondary Reddit Actions (absolutely positioned) -->
       <div class="secondary-icon-list">
-        <a href="#" class="secondary-icon">
+        <a href="#" class="secondary-icon" aria-label="Mail">
           <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
           <img
@@ -254,10 +297,11 @@
             width="12px"
             height="12px"
             class="secondary-icon-img"
+            alt="envelope icon"
           />
         </a>
 
-        <a href="#" class="secondary-icon">
+        <a href="#" class="secondary-icon" aria-label="Reddit">
           <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
           <img
@@ -265,10 +309,11 @@
             width="20px"
             height="20px"
             class="secondary-icon-img"
+            alt="reddit mascot"
           />
         </a>
 
-        <a href="#" class="secondary-icon">
+        <a href="#" class="secondary-icon" aria-label="Settings">
           <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
           <img
@@ -276,10 +321,11 @@
             width="20px"
             height="20px"
             class="secondary-icon-img"
+            alt="settings icon"
           />
         </a>
 
-        <a href="#" class="secondary-icon">
+        <a href="#" class="secondary-icon" aria-label="Up vote">
           <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
           <img
@@ -287,6 +333,7 @@
             width="20px"
             height="20px"
             class="secondary-icon-img"
+            alt="up arrow icon"
           />
         </a>
       </div>
@@ -303,6 +350,7 @@
               height="38px"
               width="38px"
               id="avatar-img"
+              alt="avatar icon"
             />
             <div id="status-dot-2"></div>
           </div>
@@ -329,7 +377,7 @@
           </form>
 
           <!-- Add Image Button -->
-          <a href="#" class="icon-lg">
+          <a href="#" class="icon-lg" aria-label="add image">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background-lg"></div>
@@ -338,11 +386,12 @@
               width="28px"
               height="28px"
               class="icon-img-lg"
+              alt="image icon"
             />
           </a>
 
           <!-- Add Link Button -->
-          <a href="#" class="icon-lg">
+          <a href="#" class="icon-lg" aria-label="add link">
             <!-- i don't have icon svg's this div allows me to 
             replicate the hover background change -->
             <div class="icon-background-lg"></div>
@@ -351,6 +400,7 @@
               width="28px"
               height="28px"
               class="icon-img-lg"
+              alt="link icon"
             />
           </a>
         </div>
@@ -364,18 +414,21 @@
             href="#"
             class="feedSelectionButton feedButtonInActive"
             id="layout-selection-button"
+            aria-label="Feed Layout Selection"
           >
             <img
               src="images/icon-card.png"
               width="28px"
               height="28px"
               class="icon-img-lg"
+              alt="card layout icon"
             />
             <img
               src="images/caret-down.svg"
               width="28px"
               height="28px"
               class="icon-img-sm lighten"
+              alt="caret down icon"
             />
           </button>
         </div>
@@ -403,19 +456,21 @@
 
           <!-- World News -->
           <div class="top-news-item border-bottom">
-            <a href="#" class="top-news-flex">
+            <a href="#" class="top-news-flex" aria-label="world news">
               <span class="content-center serif text-black">1</span>
               <img
                 class="arrow-up content-center"
                 src="images/icon-arrow-up.png"
                 width="14px"
                 height="14px"
+                alt="up arrow icon"
               />
               <img
                 class="arrow-up content-center"
                 src="images/world-news.png"
                 width="40px"
                 height="40px"
+                alt="world news"
               />
               <span class="content-center top-news-label text-black"
                 >r/worldnews</span
@@ -425,6 +480,7 @@
             <button
               class="join-community-button light-on-hover"
               id="top-news-1"
+              aria-label="Join Community"
             >
               <p class="join">Join</p>
             </button>
@@ -432,19 +488,21 @@
 
           <!-- Not the Onion -->
           <div class="top-news-item border-bottom">
-            <a href="#" class="top-news-flex">
+            <a href="#" class="top-news-flex" aria-label="not the onion">
               <span class="content-center serif text-black">2</span>
               <img
                 class="arrow-up content-center"
                 src="images/icon-arrow-up.png"
                 width="14px"
                 height="14px"
+                alt="up arrow icon"
               />
               <img
                 class="arrow-up content-center"
                 src="images/nottheonion.png"
                 width="40px"
                 height="40px"
+                alt="not the onion"
               />
               <span class="content-center top-news-label text-black"
                 >r/nottheonion</span
@@ -454,6 +512,7 @@
             <button
               class="join-community-button light-on-hover"
               id="top-news-2"
+              aria-label="Join Community"
             >
               <p class="join">Join</p>
             </button>
@@ -461,19 +520,21 @@
 
           <!-- Tech News -->
           <div class="top-news-item border-bottom">
-            <a href="#" class="top-news-flex">
+            <a href="#" class="top-news-flex" aria-label="tech news">
               <span class="content-center serif text-black">3</span>
               <img
                 class="arrow-up content-center"
                 src="images/icon-arrow-up.png"
                 width="14px"
                 height="14px"
+                alt="up arrow icon"
               />
               <img
                 class="arrow-up content-center"
                 src="images/technews.png"
                 width="40px"
                 height="40px"
+                alt="tech news"
               />
               <span class="content-center top-news-label text-black"
                 >r/technews</span
@@ -483,6 +544,7 @@
             <button
               class="join-community-button light-on-hover"
               id="top-news-3"
+              aria-label="Join Community"
             >
               <p class="join">Join</p>
             </button>
@@ -490,19 +552,21 @@
 
           <!-- Saved You a Click -->
           <div class="top-news-item">
-            <a href="#" class="top-news-flex">
+            <a href="#" class="top-news-flex" aria-label="saved you a click">
               <span class="content-center serif text-black">4</span>
               <img
                 class="arrow-up content-center"
                 src="images/icon-arrow-up.png"
                 width="14px"
                 height="14px"
+                alt="up arrow icon"
               />
               <img
                 class="arrow-up content-center"
                 src="images/savedyouaclick.png"
                 width="40px"
                 height="40px"
+                alt="saved you a click"
               />
               <span class="content-center top-news-label text-black"
                 >r/savedyouaclick</span
@@ -512,31 +576,38 @@
             <button
               class="join-community-button light-on-hover"
               id="top-news-4"
+              aria-label="Join Community"
             >
               <p class="join">Join</p>
             </button>
           </div>
 
           <!-- View All Button -->
-          <a href="#">
-            <button id="" class="blue-button light-on-hover margin-1">
+          <a href="#" aria-label="view all">
+            <button
+              id=""
+              class="blue-button light-on-hover margin-1"
+              aria-label="View All"
+            >
               View All
             </button>
           </a>
 
           <!-- Tags -->
           <div class="flex" id="tag-container">
-            <a href="#" class="remove-decoration">
-              <button class="tag-button">Top</button>
+            <a href="#" class="remove-decoration" aria-label="top posts">
+              <button class="tag-button" aria-label="Tag Top">Top</button>
             </a>
-            <a href="#" class="remove-decoration">
-              <button class="tag-button">Near You</button>
+            <a href="#" class="remove-decoration" aria-label="near you">
+              <button class="tag-button" aria-label="Tag Near You">
+                Near You
+              </button>
             </a>
-            <a href="#" class="remove-decoration">
-              <button class="tag-button">Aww</button>
+            <a href="#" class="remove-decoration" aria-label="aww">
+              <button class="tag-button" aria-label="Tag Aww">Aww</button>
             </a>
-            <a href="#" class="remove-decoration">
-              <button class="tag-button">Sports</button>
+            <a href="#" class="remove-decoration" aria-label="sports">
+              <button class="tag-button" aria-label="Tag Sports">Sports</button>
             </a>
           </div>
         </div>
@@ -549,6 +620,7 @@
               width="28px"
               height="28px"
               class="red-prem-img"
+              alt="reddit shield"
             />
             <div>
               <p class="red-prem-title">Reddit Premium</p>
@@ -557,8 +629,12 @@
               </p>
             </div>
           </div>
-          <a href="#">
-            <button id="red-premium-button" class="light-on-hover">
+          <a href="#" aria-label="try premium">
+            <button
+              id="red-premium-button"
+              class="light-on-hover"
+              aria-label="Try Now"
+            >
               Try Now
             </button>
           </a>
@@ -566,9 +642,19 @@
 
         <!-- Home -->
         <div class="card-body-no-margin" id="reddit-premium">
-          <img src="images/home-banner.png" width="310px" height="34px" />
+          <img
+            src="images/home-banner.png"
+            width="310px"
+            height="34px"
+            alt="home"
+          />
           <div id="home-heading">
-            <img src="images/snoo-home.png" width="48px" height="68px" />
+            <img
+              src="images/snoo-home.png"
+              width="48px"
+              height="68px"
+              alt="snoo"
+            />
             <div class="home-text-container"><p class="">Home</p></div>
           </div>
           <p class="home-msg">
@@ -577,15 +663,23 @@
           </p>
 
           <!-- Create Post Button -->
-          <a href="#">
-            <button id="" class="blue-button light-on-hover margin-1-bottom-0">
+          <a href="#" aria-label="create post">
+            <button
+              id=""
+              class="blue-button light-on-hover margin-1-bottom-0"
+              aria-label="Create Post"
+            >
               Create Post
             </button>
           </a>
 
           <!-- Create Community Button -->
-          <a href="#">
-            <button id="" class="white-button light-on-hover margin-1">
+          <a href="#" aria-label="create community">
+            <button
+              id=""
+              class="white-button light-on-hover margin-1"
+              aria-label="Create Community"
+            >
               Create Community
             </button>
           </a>
@@ -603,10 +697,11 @@
                 width="24px"
                 height="24px"
                 class="recent-post-icon"
+                alt="post icon"
               />
             </div>
             <div>
-              <a class="recent-post-title">
+              <a href="#" class="recent-post-title" aria-label="post link">
                 What are some of your favorite fonts?
               </a>
               <span class="recent-post-meta"
@@ -624,10 +719,11 @@
                 width="24px"
                 height="24px"
                 class="recent-post-icon"
+                alt="post icon"
               />
             </div>
             <div>
-              <a class="recent-post-title">
+              <a href="#" class="recent-post-title" aria-label="post link">
                 Coming back to frontend after 10 days off
               </a>
               <span class="recent-post-meta"
@@ -638,25 +734,38 @@
           </div>
 
           <div></div>
-          <button id="clear-recent-posts">Clear</button>
+          <button id="clear-recent-posts" aria-label="Clear Posts">
+            Clear
+          </button>
         </div>
 
         <!-- Recent Posts -->
         <div class="card-body" id="footer">
           <div class="footer-grid border-bottom">
-            <a href="#" class="footer-link">User Agreement</a>
-            <a href="#" class="footer-link">Privacy Policy</a>
-            <a href="#" class="footer-link">Content Policy</a>
-            <a href="#" class="footer-link">Moderator Code Of Conduct</a>
+            <a href="#" class="footer-link" aria-label="User Agreement"
+              >User Agreement</a
+            >
+            <a href="#" class="footer-link" aria-label="Privacy Policy"
+              >Privacy Policy</a
+            >
+            <a href="#" class="footer-link" aria-label="Content Policy"
+              >Content Policy</a
+            >
+            <a
+              href="#"
+              class="footer-link"
+              aria-label="Moderator Code Of Conduct"
+              >Moderator Code Of Conduct</a
+            >
           </div>
 
           <div class="footer-grid border-bottom">
-            <a href="#" class="footer-link">English</a>
-            <a href="#" class="footer-link">Français</a>
-            <a href="#" class="footer-link">Italiano</a>
-            <a href="#" class="footer-link">Deutsch</a>
-            <a href="#" class="footer-link">Español</a>
-            <a href="#" class="footer-link">Português</a>
+            <a href="#" class="footer-link" aria-label="Français">Français</a>
+            <a href="#" class="footer-link" aria-label="English">English</a>
+            <a href="#" class="footer-link" aria-label="Italiano">Italiano</a>
+            <a href="#" class="footer-link" aria-label="Deutsch">Deutsch</a>
+            <a href="#" class="footer-link" aria-label="Español">Español</a>
+            <a href="#" class="footer-link" aria-label="Português">Português</a>
           </div>
 
           <div class="">

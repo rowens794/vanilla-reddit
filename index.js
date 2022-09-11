@@ -204,6 +204,7 @@ const createDropDownMenu = () => {
                 height="16px"
                 width="16px"
                 class="dropdown-image"
+                alt="plus icon"
             />
             <span class="dropdown-button-text">Create Community</span>
         </div>
@@ -220,6 +221,7 @@ const createDropDownMenu = () => {
                 height="16px"
                 width="16px"
                 class="dropdown-image"
+                alt="community icon"
             />
             <span class="dropdown-button-text">${community.name}</span>
         </div>
@@ -229,6 +231,7 @@ const createDropDownMenu = () => {
                 height="16px"
                 width="16px"
                 class="dropdown-star"
+                alt="star icon"
             />
         </div>
     `;
@@ -271,6 +274,7 @@ const createDropDownMenu = () => {
             height="16px"
             width="16px"
             class="dropdown-image"
+            alt="feed icon"
         />
         <span class="dropdown-button-text">${feed.name}</span>
         </div>
@@ -332,6 +336,7 @@ const createDropDownMenu = () => {
             height="16px"
             width="16px"
             class="dropdown-image"
+            alt="drop down icon"
         />
         <span class="dropdown-button-text">${item.name}</span>
         </div>
@@ -434,6 +439,7 @@ const createFeedSelectionButtons = () => {
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
+            alt="feed icon"
         />
         <span class="feed-selection-text">${feed.name}</span>
 
@@ -442,6 +448,7 @@ const createFeedSelectionButtons = () => {
             width="14px"
             height="14px"
             class="active-feed-img feed-selection-caret"
+            alt="caret down icon"
         />
     `;
 
@@ -524,6 +531,7 @@ const createFeedSelectionMobileMenu = () => {
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
+            alt="feed icon"
         />
         <span class="feed-selection-text-mobile">${feed.name}</span>
     `;
@@ -621,6 +629,7 @@ const createFeedLayoutMenu = () => {
             width="28px"
             height="28px"
             class="icon-img-lg ${i === 0 ? "active-feed-img" : ""}"
+            alt="layout feed image"
         />
         <span class="feed-selection-text-mobile">${layout.name}</span>
     `;
@@ -775,9 +784,9 @@ const createCardsAndAddToDOM = (feed) => {
 
     //if not text generate an image
     if (!text) {
-      //generate random number between 250 and 500
-      let width = Math.floor(Math.random() * 500) + 500;
-      let height = Math.floor(Math.random() * 500) + 500;
+      //generate random number between 300 and 600
+      let width = Math.floor(Math.random() * 300) + 300;
+      let height = Math.floor(Math.random() * 300) + 300;
       imageLink = `https://picsum.photos/${width}/${height}`;
       imageHeight = height;
       imageWidth = width;
@@ -834,9 +843,9 @@ const createCardsAndAddToDOM = (feed) => {
       <div class="feed-card-body">
         <div class="feed-post-data">
           <div class="subreddit-icon"></div>
-          <a href="#" class="subreddit-name">r/${subreddit}</a>
+          <a href="#" class="subreddit-name" aria-label="${subreddit}">r/${subreddit}</a>
           <p class="posted-by-time">Posted by 
-            <a class='user-link' href='#'>u/${author}</a>
+            <a href="#" class='user-link' aria-label="${author}">u/${author}</a>
           </p>
           <p class="posted-by-time">${datestring}</p>
         </div>
@@ -869,6 +878,7 @@ const createCardsAndAddToDOM = (feed) => {
                 class="post-image-landscape"
                 height="${imageHeight}"
                 width="${imageWidth}"
+                alt="post image"
               />
             </div>
             `
@@ -892,6 +902,7 @@ const createCardsAndAddToDOM = (feed) => {
               width="24px"
               height="24px"
               class="post-state-icon"
+              alt="comment icon"
             />
             <p class="post-stat-label">${cleanedComments} Comments</p>
           </div>
@@ -903,6 +914,7 @@ const createCardsAndAddToDOM = (feed) => {
               width="24px"
               height="24px"
               class="post-state-icon"
+              alt="award icon"
             />
             <p class="post-stat-label">Award</p>
           </div>
@@ -914,6 +926,7 @@ const createCardsAndAddToDOM = (feed) => {
               width="24px"
               height="24px"
               class="post-state-icon"
+              alt="share icon"
             />
             <p class="post-stat-label">Share</p>
           </div>
@@ -925,6 +938,7 @@ const createCardsAndAddToDOM = (feed) => {
               width="24px"
               height="24px"
               class="post-state-icon"
+              alt="ellipse icon"
             />
           </div>
         </div>
